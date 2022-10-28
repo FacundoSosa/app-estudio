@@ -2,8 +2,3 @@
     width: 280px;
     height: 280px;
 }
-
-.overflow-scroll {
-    overflow-y: auto;
-    scroll-padding-bottom: 50px;
-}
