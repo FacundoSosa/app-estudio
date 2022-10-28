@@ -9,13 +9,15 @@ const CardProvider = (props) => {
     const createCard = (card) => {
       setCounter(counter + 1)
       setCards([...cards, {...card, id: counter}])
-       
     }
 
-    /* console.log(counter); */
+    const deleteCard = (id) => {
+        const filter = cards.filter((card) => card.id !== id)
+        setCards(filter)
+    }
 
     return (
-      <CardContext.Provider value={{createCard, cards, counter}}>
+      <CardContext.Provider value={{createCard, cards, counter, deleteCard}}>
           {props.children}
       </CardContext.Provider>
     )

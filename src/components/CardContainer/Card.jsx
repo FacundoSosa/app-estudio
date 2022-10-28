@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useContext } from 'react'
+import { CardContext } from '../Context/Context'
 import "./Card.css"
 
 function Card({card}) {
+    const {deleteCard} = useContext(CardContext)
     const [reverse, setReverse] = useState(`${card.question}`)
 
     const turnCard = () => {
@@ -10,8 +13,12 @@ function Card({card}) {
     }
 
     return (
-        <div className='border d-flex justify-content-center align-content-center wh-200px overflow-scroll m-5' onClick={() => turnCard()}>
-            <p className='m-4'>{reverse}</p>
+        <div className='border rounded d-flex flex-column justify-content-between wh-200px overflow-scroll p-4 m-4' onClick={() => turnCard()}>
+            <p className='mx-4'>{reverse}</p>
+            <span className='d-flex justify-content-center'>
+                <button onClick={() => deleteCard(card.id)} className='btn btn-light'>Eliminar tarjeta</button>
+            </span>
+            
         </div>
     )
 }

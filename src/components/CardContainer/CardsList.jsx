@@ -7,7 +7,7 @@ import "./Card.css"
 function CardsList() {
     const {cards} = useContext(CardContext);
     return (
-        <div className='d-flex flex-wrap'>
+        <div className='d-flex flex-wrap justify-content-center my-5'>
             {cards.map(card => {
                 return (
                     cards.length > 0 ? <Card key={card.id} card={card}/> : null
