@@ -2,3 +2,12 @@
     width: 280px;
     height: 280px;
 }
+
+.cards-container {
+    height: 100vh;
+    width: 100vh;
+}
+
+.card-item {
+    cursor: pointer;
+}

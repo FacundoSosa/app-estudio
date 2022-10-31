@@ -14,14 +14,12 @@ function Card({card}) {
 
     return (
         <div>
-            <div className='border rounded d-flex flex-column justify-content-between wh-200px overflow-auto p-4 m-4' onClick={() => turnCard()}>
-                <p className='mx-4'>{reverse}</p>
-            </div>
-
+            <div className='card-item border rounded d-flex flex-column justify-content-between wh-200px overflow-auto p-4 m-4' onClick={() => turnCard()}>
+                <p>{reverse}</p>
             <span className='d-flex justify-content-center'>
-                <button onClick={() => deleteCard(card.id)} className='btn btn-light'>Eliminar tarjeta</button>
-            </span>
-            
+                <button className='btn btn-light' onClick={() => deleteCard(card.id)} >Eliminar tarjeta</button>
+            </span> 
+            </div>
         </div>
         
     )
