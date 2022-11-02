@@ -23,8 +23,13 @@ const CardProvider = (props) => {
       setProjects([...projects, {...project, id: counter}])
     }
 
+    const deleteProject = (id) => {
+      const filter = projects.filter((project) => project.id !== id)
+      setProjects(filter)
+    }
+
     return (
-      <CardContext.Provider value={{createCard, cards, counter, deleteCard, createProject, projects}}>
+      <CardContext.Provider value={{createCard, cards, counter, deleteCard, createProject, projects, deleteProject}}>
           {props.children}
       </CardContext.Provider>
     )

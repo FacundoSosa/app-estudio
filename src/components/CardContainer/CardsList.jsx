@@ -10,7 +10,7 @@ function CardsList() {
 
     return (
         <div className='cards-container d-flex justify-content-center align-content-center w-100'>
-            <div className='d-flex justify-content-center flex-wrap my-3 px-4'>
+            <div className='d-flex justify-content-center flex-wrap my-3'>
                 {cards.map(card => {
                     return (
                         cards.length > 0 ? <Card key={card.id} card={card}/> : null
