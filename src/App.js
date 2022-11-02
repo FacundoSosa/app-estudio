@@ -1,12 +1,18 @@
 import './App.css';
 import CardProvider from './components/Context/Context';
-import CardsContainer from './components/CardContainer/CardsContainer';
-import CardsList from './components/CardContainer/CardsList';
+import ProjectsContainer from './components/ProjectsContainer/ProjectsContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Project from './components/ProjectsContainer/Project';
 
 function App() {
   return (
     <CardProvider>
-        <CardsList/>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<ProjectsContainer />} />
+          <Route exact path='/proyecto/:projectId' element={<Project />} />
+        </Routes>
+      </BrowserRouter>
     </CardProvider>
   );
 }

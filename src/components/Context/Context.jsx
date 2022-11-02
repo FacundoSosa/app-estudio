@@ -1,9 +1,11 @@
 import React,  { createContext, useState } from 'react'
+import Project from '../ProjectsContainer/Project'
 
 export const CardContext = createContext()
 
 const CardProvider = (props) => {
     const [cards, setCards] = useState([])
+    const [projects, setProjects] = useState([])
     const [counter, setCounter] = useState(1)
   
     const createCard = (card) => {
@@ -16,8 +18,13 @@ const CardProvider = (props) => {
         setCards(filter)
     }
 
+    const createProject = (project) => {
+      setCounter(counter + 1)
+      setProjects([...projects, {...project, id: counter}])
+    }
+
     return (
-      <CardContext.Provider value={{createCard, cards, counter, deleteCard}}>
+      <CardContext.Provider value={{createCard, cards, counter, deleteCard, createProject, projects}}>
           {props.children}
       </CardContext.Provider>
     )
