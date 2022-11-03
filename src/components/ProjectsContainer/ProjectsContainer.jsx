@@ -16,7 +16,7 @@ function ProjectsContainer() {
         <div className='p-2 border d-flex align-items-start justify-content-between flex-wrap w-100'>
           <Link className='btn btn-secondary mb-3' to="/">Home</Link>
           <button className='btn btn-dark' onClick={() => changeModalState()}>Nuevo proyecto</button>
-          {modalState == true ? <CreateProject modalState={modalState} changeModalState={changeModalState} /> : null}
+          {modalState === true ? <CreateProject modalState={modalState} changeModalState={changeModalState} /> : null}
         </div>
 
         <ProjectList/>

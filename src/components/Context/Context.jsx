@@ -1,5 +1,4 @@
 import React,  { createContext, useState } from 'react'
-import Project from '../ProjectsContainer/Project'
 
 export const CardContext = createContext()
 
